@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/myhome.css') }}">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/test.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/newjs.js') }}" type="text/javascript"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        main {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+
+        .section {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .section img {
+            width: 200px; 
+            height: 200px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .image-section {
+            margin-top: 20px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .loader {
+            margin-top: 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h2 class="PROJECT">CROP RECOMMENDATION SYSTEM AND LEAF DISEASE PREDICTION</h2>
+</main>
+<div class="container">
+    <div class="section">
+        <h3 style="color: #45a049;">CROP RECOMMENDATION SYSTEM</h3>
+        <img src="{{ url_for('static', filename='style/crops.jpg') }}" alt="Crop Recommendation Image">
+        <a href="{{ url_for('prediction') }}" class="btn">Go to Crop Recommendation</a>
+    </div>
+    <div class="section">
+        <h3 style="color: #45a049;">LEAF DISEASE PREDICTION</h3>
+        <img src="{{ url_for('static', filename='style/istockphoto-1251268250-612x612.jpg') }}" alt="Leaf Disease Prediction Image">
+        <a href="{{ url_for('upload') }}" class="btn">Go to Leaf Disease Prediction</a>
+    </div>
+</div>
+</body>
+</html>

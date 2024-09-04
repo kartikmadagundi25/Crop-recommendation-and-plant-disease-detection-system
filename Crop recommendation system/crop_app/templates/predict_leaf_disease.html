@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaf Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/first.css') }}">
+    <style>
+        body {
+            background: url('https://miro.medium.com/v2/resize:fit:1200/1*FswlF4lZPQ4kT_gkybacZw.jpeg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        #imagePreview {
+            display: none;
+            max-width: 300px; /* Set maximum width to medium size */
+            height: auto;
+            margin-top: 20px;
+            border: 2px solid #ddd; /* Optional: Add a border for better visibility */
+            border-radius: 8px; /* Optional: Add rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leaf Disease Prediction</h1>
+        <form id="upload-file" method="post" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+            <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" onchange="previewImage(event)">
+            <button type="submit">Predict!</button>
+        </form>
+        <img id="imagePreview" src="#" alt="Image Preview">
+        <br>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('imagePreview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
